@@ -60,6 +60,10 @@ impl WasmRenderer {
     pub fn update(echarts: &Echarts, chart: &Chart) {
         echarts.set_option(to_value(chart).unwrap());
     }
+
+    pub fn dispose(echarts: Echarts) {
+        echarts.dispose()
+    }
 }
 
 #[derive(Serialize)]
@@ -158,4 +162,7 @@ extern "C" {
 
     #[wasm_bindgen(method, js_name = "resize")]
     pub fn resize(this: &Echarts, opts: JsValue);
+
+    #[wasm_bindgen(method, js_name = "dispose")]
+    pub fn dispose(this: &Echarts);
 }
