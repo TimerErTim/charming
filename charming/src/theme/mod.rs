@@ -1,3 +1,4 @@
+#[derive(Clone, Copy, Eq, PartialEq)]
 pub enum Theme {
     Default,
     Dark,
@@ -41,8 +42,4 @@ impl Theme {
     }
 }
 
-impl Default for Theme {
-    fn default() -> Self {
-        Theme::Default
-    }
-}
+
