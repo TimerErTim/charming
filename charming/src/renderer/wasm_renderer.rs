@@ -84,6 +84,17 @@ pub struct ChartResize {
     animation: Option<Animation>,
 }
 
+impl ChartResize {
+    pub fn new(width: u32, height: u32) -> Self {
+        Self {
+            width,
+            height,
+            silent: true,
+            animation: None
+        }
+    }
+}
+
 #[derive(Serialize)]
 pub struct Animation {
     /// duration of the animation
